@@ -38,25 +38,28 @@ class JOB extends Thread  {
         this.loopLmt = loopLmt;
         this.jobName = jobName;
     }
-    private long PAUSE(double sec) {
-        long x=0;
+    private long PAUSE(long sec) {
        try {
-           Thread.sleep(x);}
+           Thread.sleep(sec);}
        catch(InterruptedException ie) {}; 
-       return x;
+       return sec;
     }
 
 
     public void run() {
         long x=0;
+        String y="";
       for(int i=1; i<=loopLmt; i++) {
-         System.out.print(this.jobName );
-         x= Math.round(1000.0*Math.random());
-          System.out.print(" work"+i);
-          System.out.print(" priority="+this.getPriority());
-          System.out.print(" ms="+x);
-          System.out.println("");
+         y="";
+         x= (long)(Math.round(1000.0*Math.random()));
          PAUSE(x);
+         y+=""+
+                 this.jobName+
+                 " work"+i+
+                 " priority="+this.getPriority()+
+                 " ms="+x
+                 ;
+         System.out.println(""+y);
       }
     }
 
@@ -74,9 +77,9 @@ public class JavaApp180720 {
         String y =String.valueOf(123);//數字轉字串
     }
     public static void poi05(){
-      JOB job1 = new JOB(4,"job1");
-      JOB job2 = new JOB(4,"job2");
-      JOB job3 = new JOB(4,"job3");
+      JOB job1 = new JOB(8,"job1");
+      JOB job2 = new JOB(8,"job2");
+      JOB job3 = new JOB(8,"job3");
     //job1.setPriority(1);
     //job2.setPriority(3);
     //job3.setPriority(2);
