@@ -1,0 +1,17 @@
+package javaapplication7;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.TreeSet;
+public class Java01 {
+  public static void main(String args[]) {
+   TreeSet<Integer> IntTS = new TreeSet<>();
+    for (int i=1;i<=100;i++) 
+      IntTS.add(new Integer(i));
+    System.out.println("初始集合大小為：" + IntTS.size());
+       Iterator i=IntTS.iterator();
+    while (i.hasNext()) 
+      if (((Integer)i.next()).intValue()%9 != 0)
+        i.remove(); 
+    System.out.println("最後集合的內容為：" + IntTS);
+  }
+}
