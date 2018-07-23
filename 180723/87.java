@@ -6,13 +6,13 @@ public class Java01 {
         p.setY(20);
         int x = (Integer)p.getX();
         int y = (Integer)p.getY();
-        System.out.println("This point is¡G" + x + ", " + y);
+        System.out.println("This point isÂ¡G" + x + ", " + y);
        
         p.setX(25.4);  // double -> Integer -> Object
         p.setY("444");
         double m = (Double)p.getX();
         double n = (Double)p.getY();
-        System.out.println("This point is¡G" + m + ", " + n);
+        System.out.println("This point isÂ¡G" + m + ", " + n);
     }
 }
 class Point{
